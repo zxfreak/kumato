@@ -11,6 +11,6 @@ public class Kumato {
 	}
 
 	public String hello() {
-		return "Hello from Kumato!!!";
+		return "Kumato says Hello!";
 	}
 }
