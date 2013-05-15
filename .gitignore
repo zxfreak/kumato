@@ -1,0 +1,8 @@
+# ECLIPSE
+.project
+.settings/
+.classpath
+
+# MAVEN
+target/
+
