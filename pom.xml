@@ -1,45 +1,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>biz.jbar</groupId>
 	<artifactId>kumato</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<name>Kumato Contact Book</name>
-	<description>Paper Contact Booklet</description>
+	<description>Kumato Paper Contact Booklet</description>
 	<url>http://localhost:8080</url>
 
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
+	<modules>
+		<module>kumato-jar</module>
+	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<junit.version>4.10</junit.version>
 	</properties>
-
-	<dependencies>
-		<!-- junit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<!--  cucumber jvm -->
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>1.0.2</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>1.0.2</version>
-			<scope>test</scope>
-		</dependency>
-		
-	</dependencies>
 
 	<build>
 		<plugins>
