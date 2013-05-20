@@ -6,3 +6,9 @@ Feature: CRUD
 Scenario: Empty Database
 	Given an empty database
 	Then the database has 0 contacts
+
+Scenario: Add a Contact
+	Given an empty database
+	When I add the contact "Natacha"
+	Then the database contains the contact "Natacha"
+	
