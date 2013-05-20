@@ -1,10 +1,11 @@
-package biz.jbar.kumato.tdd;
+package net.kumato.tdd;
 
 import static org.junit.Assert.assertEquals;
+import net.kumato.Kumato;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import biz.jbar.kumato.Kumato;
 
 public class KumatoUnitTest {
 

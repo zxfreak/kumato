@@ -1,4 +1,4 @@
-package biz.jbar.kumato.atdd;
+package net.kumato.atdd;
 
 import cucumber.junit.Cucumber;
 import org.junit.runner.RunWith;

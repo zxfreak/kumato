@@ -1,4 +1,4 @@
-package biz.jbar.kumato.atdd;
+package net.kumato.atdd;
 
 import cucumber.annotation.en.Given;
 import cucumber.annotation.en.Then;
@@ -6,7 +6,7 @@ import cucumber.annotation.en.When;
 import cucumber.runtime.PendingException;
 import static org.junit.Assert.assertEquals;
 
-import biz.jbar.kumato.Kumato;
+import net.kumato.Kumato;
 
 public class KumatoAcceptanceSteps {
 

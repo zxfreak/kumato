@@ -1,4 +1,4 @@
-package biz.jbar.kumato;
+package net.kumato;
 
 public class Kumato {
 
