@@ -8,7 +8,7 @@ import org.junit.Test;
 
 
 public class KumatoUnitTest {
-
+/*
 	Kumato k;
 	
 	@Before
@@ -21,5 +21,5 @@ public class KumatoUnitTest {
 	public void getHelloMessage() throws Exception {
 		assertEquals("Kumato says Hello!", k.hello());
 	}
-
+*/
 }

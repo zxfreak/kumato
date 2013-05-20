@@ -12,14 +12,14 @@ public class KumatoAcceptanceSteps {
 
 	private Kumato k;
 
-	@Given("^an application$")
-	public void an_application() {
-	    k = new Kumato();
+	@Given("^an empty database$")
+	public void an_empty_database() throws Throwable {
+		k = new Kumato();
 	}
 
-	@Then("^the hello message is \"([^\"]*)\"$")
-	public void the_hello_message_is(String message) {
-		assertEquals(k.hello(),message);
+	@Then("^the database has (\\d+) contacts$")
+	public void the_database_has_contacts(int size) throws Throwable {
+		assertEquals(size, k.size());
 	}
 
 }
