@@ -1,8 +1,6 @@
 package net.kumato;
 
-import java.util.HashMap;
-
-public class Kumato extends HashMap<String, Contact> {
+public class Kumato {
 
 	/**
 	 * @param args

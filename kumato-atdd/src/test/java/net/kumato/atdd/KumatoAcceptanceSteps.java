@@ -7,31 +7,32 @@ import cucumber.runtime.PendingException;
 import static org.junit.Assert.*;
 
 import net.kumato.Contact;
-import net.kumato.Kumato;
+import net.kumato.Database;
 
 public class KumatoAcceptanceSteps {
 
-	private Kumato k;
+	private Database db;
 
 	@Given("^an empty database$")
 	public void an_empty_database() throws Throwable {
-		k = new Kumato();
+		db = new Database();
 	}
 
 	@When("^I add the contact \"([^\"]*)\"$")
 	public void I_add_the_contact(String name) throws Throwable {
 		Contact c = new Contact(name);
-	    k.put(c.getKey(), c);
+	    db.put(c);
 	}
 
 	@Then("^the database has (\\d+) contacts$")
 	public void the_database_has_contacts(int size) throws Throwable {
-		assertEquals(size, k.size());
+		assertEquals(size, db.size());
 	}
 
 	@Then("^the database contains the contact \"([^\"]*)\"$")
 	public void the_database_contains_the_contact(String name) throws Throwable {
-		assertTrue(k.containsKey(name));
+		assertTrue(db.containsKey(name));
 	}
 
 }
+
