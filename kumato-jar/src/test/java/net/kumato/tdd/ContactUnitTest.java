@@ -22,4 +22,22 @@ public class ContactUnitTest {
 		assertEquals(name,c.getName());
 	}
 
+	@Test
+	// create a contact and get it as a string
+	public void getContactAsString() throws Exception {
+		String name = "Filipa";
+		Contact c = new Contact(name);
+		String cStr = c.toString();
+		assertEquals("Contact{\"Filipa\"}",cStr);
+	}
+
+	@Test
+	// create a contact with different name and get it as a string
+	public void getContactWithDifferentNameAsString() throws Exception {
+		String name = "Miquelina";
+		Contact c = new Contact(name);
+		String cStr = c.toString();
+		assertEquals("Contact{\"Miquelina\"}",cStr);
+	}
+
 }

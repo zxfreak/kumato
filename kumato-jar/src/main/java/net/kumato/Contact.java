@@ -16,4 +16,8 @@ public class Contact {
 		return name;
 	}
 
+	public String toString() {
+		String className = this.getClass().getSimpleName();
+		return className + "{\"" + this.getName() + "\"}";
+	}
 }

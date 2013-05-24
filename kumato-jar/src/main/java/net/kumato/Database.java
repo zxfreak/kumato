@@ -6,21 +6,36 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-// TODO change to singleton
+/***
+ * Database Singleton Class to encapsulate access to SQLite database 
+ */
 public class Database {
 
-    Connection connection = null;
+	private static Database databaseUniqueInstance;
+
+	Connection connection = null;
     Statement statement = null;
 
     /**
-     * TODO
+     * @return Database Singleton Instance
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
+    public static synchronized Database getInstance() throws SQLException, ClassNotFoundException {
+    	if (databaseUniqueInstance == null) {
+    		databaseUniqueInstance = new Database();
+    	}
+    	return databaseUniqueInstance;
+    }
+
+    /**
+     * Database constructor (singleton)
      * @throws ClassNotFoundException
      * @throws SQLException
      */
-	public Database() throws ClassNotFoundException, SQLException {
+	private Database() throws ClassNotFoundException, SQLException {
 
 		// load the sqlite-JDBC driver using the current class loader
-	    //TODO catch exception and exit application with an fatal error
 	    Class.forName("org.sqlite.JDBC");
 
 	    // create a database connection
@@ -49,14 +64,15 @@ public class Database {
 	 * @return
 	 * @throws SQLException 
 	 */
-	public Contact getContactByName(String name) throws SQLException {
-		Contact c = null;
+	public ContactList getContactListByName(String name) throws SQLException {
+		Contact contact = null;
+		ContactList list = new ContactList();
 		ResultSet rs = statement.executeQuery("select * from contact where name='" + name + "'");
-		// change return type to contact list or throw error if more than one is found
 		while(rs.next()) {
-			c = new Contact(rs.getString("name"));
+			contact = new Contact(rs.getString("name"));
+			list.addLast(contact);
 		}
-		return c;
+		return list;
 	}
 
 }
