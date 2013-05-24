@@ -1,16 +1,10 @@
 package net.kumato.tdd;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import net.kumato.Contact;
 
 public class ContactUnitTest {
-/*
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-*/
 
 	@Test
 	// create a contact
@@ -26,14 +20,6 @@ public class ContactUnitTest {
 		String name = "Gestrudes";
 		Contact c = new Contact(name);
 		assertEquals(name,c.getName());
-	}
-
-	@Test
-	// verify key (the contact key is the name)
-	public void verifyKey() throws Exception {
-		String name = "Gervásio";
-		Contact c = new Contact(name);
-		assertEquals(name,c.getKey());
 	}
 
 }

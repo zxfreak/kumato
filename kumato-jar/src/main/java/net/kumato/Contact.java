@@ -3,9 +3,6 @@ package net.kumato;
 /**
  * Contact
  * Stores the following contact data: name
- * it generates a key that is the same as the name
- * @author Usuario
- *
  */
 public class Contact {
 
@@ -15,11 +12,8 @@ public class Contact {
 		this.name = name;
 	}
 
-	public Object getName() {
+	public String getName() {
 		return name;
 	}
 
-	public String getKey() {
-		return name;
-	}
 }

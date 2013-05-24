@@ -1,39 +1,32 @@
 package net.kumato.tdd;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-import org.junit.Before;
-import org.junit.Test;
 import net.kumato.Contact;
 import net.kumato.Database;
+import org.junit.Before;
+import org.junit.Test;
 
 public class DatabaseUnitTest {
 
-	@Test
-	// an empty database has 0 contacts
-	public void emptyDatabase() throws Exception {
-		Database d = new Database();
-		assertEquals(0,d.size());
+	Database db;
+	
+	@Before
+	// create database
+	public void createDatabase() throws Exception {
+		db = new Database();
 	}
 
 	@Test
-	// add non existing contact
-	public void addNonExistingContact() throws Exception {
-		Database d = new Database();
-		Contact cAdd = new Contact("Felismina");
-		d.put(cAdd);
-		Contact cRead = d.get(cAdd.getKey());
-		assertEquals(cAdd.getName(),cRead.getName());
+	// create non existing user
+	public void addUser() throws Exception {
+		String name = "Asdrubal";
+		Contact cPut = new Contact(name);
+		db.putContact(cPut);
+		Contact cGet = db.getContactByName(name);
+		assertEquals(name, cGet.getName());
 	}
 
-	@Test(expected=Exception.class)
-	// add an existing contact throws exception
-	public void addExistingContactThrowsException() throws Exception {
-		Database d = new Database();
-		Contact c = new Contact("Mariana");
-		d.put(c);
-		d.put(c);
-		fail("Exception expected but not thrown");
-	}
-
+	// create existing user returns exception
+	
+	// retriving non existing user gets exception
 }
