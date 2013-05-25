@@ -3,8 +3,6 @@ Feature: CRUD
 	I want to Create, Read, Update and Delete contacts
 	So I can build and maintain my contact book
 	
-Scenario: Empty Database
-
 Scenario: Add a non-existing Contact
 	Given an empty database
 	When I add the contact "Natacha"

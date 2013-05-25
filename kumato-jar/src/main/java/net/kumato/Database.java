@@ -44,7 +44,14 @@ public class Database {
 	    statement = connection.createStatement();
 	    statement.setQueryTimeout(30);  // set timeout to 30 sec.
 	    
-	    // create tables
+	    createTables();
+	}
+
+	/**
+	 * TODO
+	 */
+	public void createTables() throws SQLException {
+		// create tables
 	    statement.executeUpdate("drop table if exists contact");
 	    statement.executeUpdate("create table contact (name string)");
 	}
